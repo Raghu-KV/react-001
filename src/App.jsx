@@ -1,25 +1,34 @@
-import "./practice.css";
 import { useState } from "react";
+import Button from "./components/Button";
+import Form from "./components/Form";
 
 function App() {
-  const [email, setEmail] = useState("");
+  const [num, setNum] = useState(10);
 
-  // console.log(arr);
+  const [clicked, setClicked] = useState(false);
 
-  const whenSubmit = () => {
-    console.log("submitted");
+  const addFunc = () => {
+    setNum(num + 1);
   };
+
+  const subFunc = () => {
+    setNum(num - 1);
+  };
+
+  console.log("rendered");
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="email"
-        onChange={(e) => setEmail(e.target.value)}
+      {/* <p>the number is : {num} </p>
+      <Button
+        content={clicked ? "another content" : "click"}
+        listenClick={() => setClicked(true)}
       />
-      <button onClick={() => whenSubmit()}>Submit</button>
+      <p>-----</p>
+      <Button content="Click to subract" func={subFunc} />
+      <Button content="to console" func={() => console.log("click")} /> */}
 
-      {email ? <h1>email is available</h1> : null}
+      <Form />
     </div>
   );
 }
