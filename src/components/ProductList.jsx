@@ -13,7 +13,13 @@ function ProductList() {
 
   useEffect(() => {
     apiCall();
+
+    return () => {
+      console.log("component unmound");
+    };
   }, []);
+
+  //
 
   console.log(products);
 

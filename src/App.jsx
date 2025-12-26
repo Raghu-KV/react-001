@@ -4,6 +4,7 @@ import Form from "./components/Form";
 import PracticeUseEffect from "./components/PracticeUseEffect";
 import ProductList from "./components/ProductList";
 import NavBar from "./components/NavBar";
+import PracticeUseRef from "./components/PracticeUseRef";
 
 function App() {
   const [num, setNum] = useState(10);
@@ -20,8 +21,6 @@ function App() {
     setNum(num - 1);
   };
 
-  console.log(show, setShow);
-
   return (
     <div>
       <NavBar />
@@ -35,11 +34,11 @@ function App() {
       <Button content="to console" func={() => console.log("click")} /> */}
 
       {/* <Form /> */}
-      {/* 
-      <button onClick={() => setShow(!show)}>click</button>
-      {show && <PracticeUseEffect />} */}
 
-      <ProductList />
+      {/* <button onClick={() => setShow(!show)}>click</button>
+      {show && <ProductList />} */}
+
+      <PracticeUseRef />
     </div>
   );
 }
