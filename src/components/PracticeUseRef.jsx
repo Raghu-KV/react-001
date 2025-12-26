@@ -1,11 +1,12 @@
 import { useRef } from "react";
 
 function PracticeUseRef() {
-  const paraRef = useRef();
+  const inputRef = useRef();
 
+  let i = 10;
   const addNum = () => {
-    console.log(paraRef.current);
-    paraRef.current.innerText = 20;
+    i = i + 1;
+    console.log(inputRef.current.value);
   };
 
   console.log("rendered");
@@ -13,10 +14,12 @@ function PracticeUseRef() {
     <div>
       <h1>Useref practice</h1>
 
-      <p ref={paraRef}>10</p>
+      <input type="text" ref={inputRef} />
 
       <button onClick={() => addNum()}>Add number</button>
     </div>
   );
 }
 export default PracticeUseRef;
+
+//export import, spread, rest

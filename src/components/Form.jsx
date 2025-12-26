@@ -7,6 +7,8 @@ function Form() {
   const [isEmailError, setIsEmailError] = useState(false);
   const [isPassError, setIsPassError] = useState("");
 
+  console.log("rerendering");
+
   const onSubmit = () => {
     console.log(email, password);
 

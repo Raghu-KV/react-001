@@ -5,21 +5,19 @@ import NavBar from "./NavBar";
 function ProductList() {
   const [products, setProducts] = useState([]);
 
-  const apiCall = async () => {
-    const responce = await fetch("https://dummyjson.com/products");
-    const data = await responce.json();
-    setProducts(data.products);
+  const productAPICall = async () => {
+    const res = await fetch("https://dummyjson.com/recipes");
+    const data = await res.json();
+    setProducts(data.recipes);
   };
 
-  useEffect(() => {
-    apiCall();
+  // productAPICall();
 
-    return () => {
-      console.log("component unmound");
-    };
+  useEffect(() => {
+    productAPICall();
   }, []);
 
-  //
+  // https://dummyjson.com/products
 
   console.log(products);
 
@@ -34,8 +32,12 @@ function ProductList() {
           gap: "10px",
         }}
       >
-        {products.map((i) => (
-          <ProductDisplay img={i.images[0]} title={i.title} price={i.price} />
+        {products.map((product) => (
+          <ProductDisplay
+            img={product.image}
+            title={product.name}
+            key={product.title}
+          />
         ))}
       </div>
     </div>

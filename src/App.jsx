@@ -38,7 +38,9 @@ function App() {
       {/* <button onClick={() => setShow(!show)}>click</button>
       {show && <ProductList />} */}
 
-      <PracticeUseRef />
+      <ProductList />
+
+      {/* <Form /> */}
     </div>
   );
 }
